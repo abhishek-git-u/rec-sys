@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Courses | Jaypee University</title>
+
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/course_normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/course_demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-overlay.css" />
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body class="color-5">
+	<form id="theForm" class="simform" action="calc.jsp" autocomplete="off">
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="dashboard.html"><span>Back to Dashboard</span></a>
+				<span class="right"><a class="codrops-icon codrops-icon-drop" href="#"><span>User: @username</span></a></span>
+			</div>
+			<header class="codrops-header">
+				<h1><span style="font-family: robotoSlab; text-transform: none;">Jaypee University</span> Course Selection Process</h1>	
+				<nav class="codrops-demos">
+					<a href="index.html">home</a>
+					<a href="index2.html">requirements</a>
+					<a href="index3.html">become a mentor</a>
+				</nav>
+			</header>
+			<section>
+				<label for="name" style="font-family:nevis; color:#fff;" class="select-label">Name:</label>
+				<p id="name" style="text-align: center; font-family: monty;">Your name here from database.</p>
+				<br>
+				<br>
+				<label for="email" class="select-label" style="font-family:nevis; color:#fff;">email address:</label>
+				<p id="name" style="text-align: center; font-family: monty;">Your email here from database.</p>
+				<br>
+				<br>
+				<label for="sem" class="select-label" style="font-family:monty; color:#fff;">Current Semester:</label>
+				<div>
+				<select class="cs-select cs-skin-overlay">
+					<option value="" disabled selected>Select Semester</option>
+						<option value="1">First</option>
+						<option value="2">Second</option>
+						<option value="3">Third</option>
+						<option value="4">Fourth</option>
+						<option value="5">Fifth</option>
+						<option value="6">Sixth</option>
+						<option value="7">Seventh</option>
+						<option value="8">Final Semester</option>
+				</select>
+				</div>
+				<br>
+				<br>
+				<label for="dept" class="select-label" style="font-family:nevis; color:#fff;">Select Branch:</label>
+				<input type="text" placeholder="Enter your branch"></input>
+				<br>
+				<br>
+				<label for="dept" class="select-label" style="font-family:nevis; color:#fff;">Enter Skills (comma seperated) :</label>
+				<input type="text" placeholder="Enter your skills"></input>
+				<br>
+				<br>
+				<br>
+				<label for="subject" class="select-label" style="font-family:nevis; color:#fff;">Courses Completed:</label>
+				<select class="cs-select cs-skin-overlay">
+					<optgroup label="Introductary Courses">
+						<option name="1" value="1">Explorations in Computer Science</option>
+						<option value="2" name="2">Introduction to Computer Science</option>
+						<option value="3" name="3">Data Structures</option>
+						<option value="4" name="4">Mathematics of Computer Science</option>
+						<option value="5" name="5">Computer Organization and Architecture</option>
+						<option value="6" name="6">Programming Languages</option>
+					</optgroup>
+					<optgroup label="Advanced Courses">
+
+						<option value="7" name="7">Algorithms</option>
+						<option value="8" name="8">Theory of Computation</option>
+						<option value="9" name="9">Software Desing</option>
+						<option value="10" name="10">Operating Systems</option>
+						<option value="11" name="11">Computer Graphics</option>
+						<option value="12" name="12">Artificial Intelligence</option>
+					</optgroup>
+				</select>
+				
+			</section>
+			<div style="text-align: center; font-family: monty;">
+			<button class="submit" type="submit" >Proceed</button>
+			</div>
+			<section class="related">
+				<p style="font-family: monty;">Don't want to select individual courses? Proceed now with Google+ to skip all hassle.</p>
+				<a href="google.html">
+					<img src="img/g.jpg" />
+					<h3>Google Sign In</h3>
+				</a>
+
+			</section>
+		</div><!-- /container -->
+		</form>
+		<script src="js/classie_course.js"></script>
+		<script src="js/selectFx_course.js"></script>
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx(el, {
+						stickyPlaceholder: false
+					});
+				} );
+			})();
+		</script>
+	</body>
+</html>

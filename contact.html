@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" class="demo-1 no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/resetSearch.css">
+	<link rel="stylesheet" href="css/search.css">
+	<link rel="stylesheet" href="css/reset.css"> 
+	<link rel="stylesheet" href="css/style.css"> 
+	<script src="js/modernizr.js"></script> 
+	<link rel="stylesheet" href="css/inputreset1.css"> 
+	<link rel="stylesheet" href="css/input.css"> 
+	<title>Maps | Jaypee University</title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/event.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<script src="js/snap.svg-min.js"></script>
+
+	<style type="text/css">
+#map {
+    width: 500px;
+    height: 400px;
+    background-color: #CCC;
+  }
+	</style>
+</head>
+<body>
+	<header class="cd-main-header animate-search">
+		<div class="cd-logo"><a href="index.html">Jaypee University</a></div>
+		<nav class="cd-main-nav-wrapper">
+			<a href="#search" class="cd-search-trigger cd-text-replace">Search</a>
+			<ul class="cd-main-nav">
+				<li><a href="students.html">Students</a></li>
+				<li><a href="#0">Faculty and Staff</a></li>
+				<li><a href="#0">Alumni</a></li>
+				<li><a href="#0">Parents</a></li>
+			</ul> <!-- .cd-main-nav -->
+		</nav> <!-- .cd-main-nav-wrapper -->
+		<a href="#0" class="cd-nav-trigger cd-text-replace">Menu<span></span></a>
+	</header>
+	
+
+	<div id="search" class="cd-main-search">
+		<form>
+			<input type="search" placeholder="Search...">
+			<div class="cd-select">
+				<span>in</span>
+				<select name="select-category">
+					<option value="all-categories">all Categories</option>
+					<option value="category1">Students</option>
+					<option value="category2">Faculty and Staff</option>
+					<option value="category3">Alumni</option>
+				</select>
+				<span class="selected-value">All Categories</span>
+			</div>
+		</form>
+		<div class="cd-search-suggestions">
+			<div class="news">
+				<h3>Related Searches</h3>
+				<ul>
+					<li>
+						<a class="image-wrapper" href="#0"><img src="img/placeholder.png" alt="News image"></a>
+						<h4><a class="cd-nowrap" href="#0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
+						<time datetime="2016-01-12">Feb 03, 2016</time>
+					</li>
+					<li>
+						<a class="image-wrapper" href="#0"><img src="img/placeholder.png" alt="News image"></a>
+						<h4><a class="cd-nowrap" href="#0">Incidunt voluptatem adipisci voluptates fugit beatae culpa eum, distinctio, assumenda est ad</a></h4>
+						<time datetime="2016-01-12">Jan 28, 2016</time>
+					</li>
+					<li>
+						<a class="image-wrapper" href="#0"><img src="img/placeholder.png" alt="News image"></a>
+						<h4><a class="cd-nowrap" href="#0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, esse.</a></h4>
+						<time datetime="2016-01-12">Jan 12, 2016</time>
+					</li>
+				</ul>
+			</div> <!-- .news -->
+		</div> <!-- .cd-search-suggestions -->
+		<a href="#0" class="close cd-text-replace">Close Form</a>
+	</div> <!-- .cd-main-search -->
+	<div class="cd-cover-layer"></div> <!-- cover main content when search form is open -->
+	<!--Search and nav-bar close -->
+	
+
+
+	<div class="menuNews" style="background: #c6c5c5;">
+	<div class="news">
+	<p style="font-size: 21px; text-decoration: underline;">Maps</p>
+	<br>
+	<div style="font-family: monty; font-size: 19px;">
+	<p>Visit the Jaypee University Information Center for general information about the campus, or a free, historical tour of Jaypee Yard. Directions by public transportation or car are also available.</p>
+	<br>
+	<br>
+	<p>Jump to maps and directions for :
+	<br>
+	<ul>
+	<br>
+	<li>- School</li>
+	<li>- Theatre</li>
+	<li>- Miscellaneous</li>
+	<li>- Library</li>
+	<li>- Hospital</li>
+	<li>- Atheletic Facilities</li>
+	</ul>
+	</div>
+	</div>
+	<div class="initiative">
+	<div id="map"></div>
+	<br>
+	
+	</div>
+
+	</div>
+	<div class="basic-footer">
+	<div class="cd-form-wrapper cd-container">		
+		<form class="cd-form">
+			<label class="cd-label" for="cd-email">Newsletter</label>
+			<input type="email" id="cd-email" class="cd-email" name="cd-email" placeholder="Enter your email address">
+			<input type="submit" class="cd-submit" value="Submit">
+			<div class="cd-loading"></div>
+		</form>	
+		<div data-type="message" class="cd-response-success"><p>Great! Thanks for subscribing.</p>
+		</div>
+	</div>
+	<h3 class="footerHead">Jaypee University </h3>
+	<br>
+	<br>
+	<div class="secondaryText">
+		<ul id="menu">
+		<li><a href="#">Offers and Services &nbsp</a></li>
+		<li><a href="#">Calendars &nbsp</a></li>
+		<li><a href="#">Careers &nbsp</a></li>
+		</ul>
+		<br>
+		<ul id="menu2">
+		<li><a href="#">Contact Us &nbsp|&nbsp</a></li>
+		<li><a href="#">Maps &nbsp|&nbsp</a></li>
+		<li><a href="#">Parking &nbsp</a></li>
+		</ul>
+		<br>
+		<div class="contact">
+		<p style="color: #686868;">Sector-128, Noida, Uttar Pradesh. </p>
+		<p>(91)-9953896535</p>
+		</div>
+		<br>
+		<br>
+		<br>
+		
+		<ul id="menu3">
+		<li><a href="#">Copyright &nbsp</a></li>
+		<li><a href="#">Disclaimer &nbsp</a></li>
+		<li><a href="#">Privacy Policy &nbsp</a></li>
+		</ul>
+	</div>
+	</div>
+	<script>
+			(function() {
+	
+				function init() {
+					var speed = 250,
+						easing = mina.easeinout;
+
+					[].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
+						var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+							pathConfig = {
+								from : path.attr( 'd' ),
+								to : el.getAttribute( 'data-path-hover' )
+							};
+
+						el.addEventListener( 'mouseenter', function() {
+							path.animate( { 'path' : pathConfig.to }, speed, easing );
+						} );
+
+						el.addEventListener( 'mouseleave', function() {
+							path.animate( { 'path' : pathConfig.from }, speed, easing );
+						} );
+					} );
+				}
+
+				init();
+
+			})();
+		</script>
+  <script>
+  function initMap() {
+    var mapDiv = document.getElementById('map');
+    var map = new google.maps.Map(mapDiv, {
+      center: {lat: 28.3748, lng: 77.2221},
+      zoom: 8
+    });
+  }
+</script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/input.js"></script> <!-- Resource jQuery -->
+<script src="js/search.js"></script> <!-- Resource jQuery -->
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>G+ Sign In | Jaypee University</title>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
+  		<meta name="google-signin-client_id" content="598824017655-r4tt1k6pniosa8e1qd7t1a6pg4j7g4qf.apps.googleusercontent.com"></meta>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/course_normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/course_demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-overlay.css" />
+		<style type="text/css">
+		.gbutton {
+			width: 10%;
+			margin: 0 auto;
+		}
+		.arrange {
+			width: 100%;
+
+		}
+		.left {
+			float: left;
+			width: 50%;
+			padding-left: 27em;
+		}
+
+		.right {
+			width: 50%;
+			float: left;
+			padding-right: 27em;
+		}
+		.warning {
+			margin-top: 2em;
+			padding-top: 2em;
+		}
+		</style>
+	</head>
+	<body class="color-5">
+	
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="dashboard.html"><span>Back to Dashboard</span></a>
+				
+			</div>
+			<header class="codrops-header">
+				<h1><span style="font-family: robotoSlab; text-transform: none;">Jaypee University</span> Course Selection Process</h1>
+			</header>
+			<section>
+				<div class="gbutton" id="gConnect">
+    				<div id="signin-button"></div>
+  				</div>
+  				<br>
+  				<br>
+  				<div id="authOps" style="display:none">
+				    <h2>Congratulations! User is now signed in to the app using Google+</h2>
+				    <br><br>
+				    <div class="arrange">
+				    <div class="left">
+				    <button style="background: #686868; font-weight: bolder; width:130px; height: 70px;" id="signOut" onclick="auth2.signOut()">Sign Out</button>
+				    </div>
+				    <div class="right">
+				    <button id="disconnect" style="background: #514187; font-weight: bolder; width:130px; height: 70px;" >Disconnect</button>
+				    </div>
+				    </div>
+				    <br />
+
+				    <br />
+				    <div class="warning">
+				    <p style="font-family: nevis;">(Note: If the user chooses to disconnect, the app must delete all stored
+				    information retrieved from Google for the given user.)</p>
+				    <br> 
+				    </div>
+				    <h2>Based on your G+ Profile, these are your skills:</h2>
+				    <br>
+				    <br>
+			    <div id="profile"></div>
+
+
+  
+  				</div>
+
+
+  				<form id="theForm" class="simform" action="calc.jsp" autocomplete="off">
+  				<label for="name" style="font-family:nevis; color:#fff;" class="select-label">Name:</label>
+  				<div id="name" style="font-family: monty;"></div>
+				
+				<br>
+				<br>
+				<label for="about" class="select-label" style="font-family:nevis; color:#fff;">About Me:</label>
+				<div id="about" style="font-family: monty;"></div>
+				<br>
+				<br>
+				<label for="sem" class="select-label" style="font-family:monty; color:#fff;">Skills:</label>
+				<div id="skills" style="font-family: monty;">
+					
+				</div>
+				<br>
+				<br>
+				
+				<br>
+
+		
+			</section>
+			<div style="text-align: center; font-family: monty;">
+			<button class="submit" type="submit" >Proceed</button>
+			</div>
+			<section class="related">
+				<p style="font-family: monty;">Try the old fashioned way? Click below.</p>
+				<a href="course3.html">
+					<img src="img/s.jpg" />
+					<h3>Student Portal</h3>
+				</a>
+
+			</section>
+		<!-- /container -->
+		</form>
+		<script src="js/classie_course.js"></script>
+		<script src="js/selectFx_course.js"></script>
+		<script>
+			(function() {
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx(el, {
+						stickyPlaceholder: false
+					});
+				} );
+			})();
+		</script>
+
+		<script type="text/javascript">
+var auth2 = {};
+
+var helper = (function() {
+  return {
+    /**
+     * Hides the sign in button and starts the post-authorization operations.
+     *
+     * @param {Object} authResult An Object which contains the access token and
+     *   other authentication information.
+     */
+     
+    onSignInCallback: function(authResult) {
+      $('#authResult').html('Auth Result:<br/>');
+      for (var field in authResult) {
+        $('#authResult').append(' ' + field + ': ' +
+            authResult[field] + '<br/>');
+      }
+      if (authResult.isSignedIn.get()) {
+        $('#authOps').show('slow');
+        $('#gConnect').hide();
+        helper.profile();
+        helper.people();
+      } else {
+          if (authResult['error'] || authResult.currentUser.get().getAuthResponse() == null) {
+            // There was an error, which means the user is not signed in.
+            // As an example, you can handle by writing to the console:
+            console.log('There was an error: ' + authResult['error']);
+          }
+          $('#authResult').append('Logged out');
+          $('#authOps').hide('slow');
+          $('#gConnect').show();
+      }
+
+      console.log('authResult', authResult);
+    },
+
+    /**
+     * Calls the OAuth2 endpoint to disconnect the app for the user.
+     */
+    disconnect: function() {
+      // Revoke the access token.
+      auth2.disconnect();
+    },
+
+    /**
+     * Gets and renders the list of people visible to this app.
+     
+    people: function() {
+      gapi.client.plus.people.list({
+        'userId': 'me',
+        'collection': 'visible'
+      }).then(function(res) {
+        var people = res.result;
+        $('#visiblePeople').empty();
+        $('#visiblePeople').append('Number of people visible to this app: ' +
+            people.totalItems + '<br/>');
+        for (var personIndex in people.items) {
+          person = people.items[personIndex];
+          $('#visiblePeople').append('<p>' + person.displayName + '</p>');
+        }
+      });
+    },
+    /**
+     * Gets and renders the currently signed in user's profile data.
+     */
+    profile: function(){
+      gapi.client.plus.people.get({
+        'userId': 'me'
+      }).then(function(res) {
+        var profile = res.result;
+        console.log(profile);
+        $('#profile').empty();
+        $('#profile').append(
+            $('<p><img src=\"' + profile.image.url + '\"></p>'));
+        $('#name').append(
+            $('<p>' + profile.displayName + '</p>'));
+        $('#about').append(
+            $('<p>' + profile.aboutMe + '</p>'));
+        $('#skills').append(
+            $('<p name="skills">' + profile.skills + '</p>'));
+
+
+      }, function(err) {
+        var error = err.result;
+        $('#profile').empty();
+        $('#profile').append(error.message);
+      });
+    }
+  };
+})();
+
+/**
+ * jQuery initialization
+ */
+$(document).ready(function() {
+  $('#disconnect').click(helper.disconnect);
+  $('#loaderror').hide();
+  if ($('meta')[0].content == 'YOUR_CLIENT_ID') {
+    alert('This sample requires your OAuth credentials (client ID) ' +
+        'from the Google APIs console:\n' +
+        '    https://code.google.com/apis/console/#:access\n\n' +
+        'Find and replace YOUR_CLIENT_ID with your client ID.'
+    );
+  }
+});
+
+/**
+ * Handler for when the sign-in state changes.
+ *
+ * @param {boolean} isSignedIn The new signed in state.
+ */
+var updateSignIn = function() {
+  console.log('update sign in state');
+  if (auth2.isSignedIn.get()) {
+    console.log('signed in');
+    helper.onSignInCallback(gapi.auth2.getAuthInstance());
+  }else{
+    console.log('signed out');
+    helper.onSignInCallback(gapi.auth2.getAuthInstance());
+  }
+}
+
+/**
+ * This method sets up the sign-in listener after the client library loads.
+ */
+function startApp() {
+  gapi.load('auth2', function() {
+    gapi.client.load('plus','v1').then(function() {
+      gapi.signin2.render('signin-button', {
+          scope: 'https://www.googleapis.com/auth/plus.login',
+          fetch_basic_profile: false });
+      gapi.auth2.init({fetch_basic_profile: false,
+          scope:'https://www.googleapis.com/auth/plus.login'}).then(
+            function (){
+              console.log('init');
+              auth2 = gapi.auth2.getAuthInstance();
+              auth2.isSignedIn.listen(updateSignIn);
+              auth2.then(updateSignIn);
+            });
+    });
+  });
+}
+</script>
+<script src="https://apis.google.com/js/client:platform.js?onload=startApp"></script>
+	</body>
+</html>

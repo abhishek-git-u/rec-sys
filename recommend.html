@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>G+ Sign In | Jaypee University</title>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/course_normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/course_demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-overlay.css" />
+		<link rel="stylesheet" type="text/css" href="css/modal_component.css" />
+		<script src="js/modal.custom.js"></script>
+		<style type="text/css">
+
+    .card {
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  background: #fff;
+  border-radius: 2px;
+  padding: 2em;
+  font-family: monty;
+  color: #6E6262;
+  line-height: 21px;
+  font-size: 15px;
+  width: 45%;
+  align-content: center;
+}
+.courses li {
+  margin-left: 25em;
+}
+
+	</style>
+	</head>
+	<body class="color-5" style="background: #222222;">
+	
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="dashboard.html"><span>Back to Dashboard</span></a>
+			</div>
+			<header class="codrops-header">
+				<h1><span style="font-family: robotoSlab; text-transform: none;">Jaypee University</span> Course Selection Process</h1>
+			</header>
+			<section>
+			<p style="font-family: monty;">Here are some few courses you should check out : </p>
+      <br>
+      <div class="courses">
+
+      <ul>
+
+<!--Begin for loop here and show atleast 5 recommendations -->
+      <li><div class="card"><p>Introduction to Programming</p></div></li>
+      <br>
+      <br>
+
+<!-- stop for loop here -->
+      </ul>
+      </div>
+		  <br>
+      
+			</section>
+
+			<div class="md-modal md-effect-1" id="modal-1">
+			<div class="md-content">
+				<h3>Success!</h3>
+				<div>
+					<p>Congratulations on selecting your courses. Please read the terms below: </p>
+					<ul>
+						<li><strong>Freeze:</strong> Your subjects have been frozen. Once the subjects are frozen, they cannot be changed.</li>
+						<li><strong>Look:</strong> Make sure to checkout the elected subjects in your student portal.</li>
+						<li><strong>Aware:</strong> Make sure you check the notice board/portal for further querries.</li>
+					</ul>
+					<button class="md-close">Close</button>
+				</div>
+			</div>
+		</div>
+		
+
+
+			<div style="text-align: center; font-family: monty;">
+			<button class="md-trigger" data-modal="modal-1">Finish &amp; Freeze</button>
+			</div>
+			<section class="related">
+				<p style="font-family: robotoSlab;  font-size: 18px;">Jaypee University</p>
+				<a href="course3.html">
+					<h3 style="text-align: center; font-family: monty;">Student Portal</h3>
+				</a>
+			</section>
+			<div class="md-overlay"></div><!-- the overlay element -->
+		<!-- /container -->
+		<script src="js/classie_course.js"></script>
+		<script src="js/selectFx_course.js"></script>
+
+
+
+		<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+		<script src="js/modal.js"></script>
+		<script src="js/modalEffects.js"></script>
+
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="js/cssParser.js"></script>
+		<script src="js/css-filters-polyfill.js"></script>
+	</body>
+</html>
