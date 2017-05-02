@@ -1,4 +1,4 @@
-# recommender-system
+# Recommender-system
 A simple recommendation system web application in JSP and HTML/CSS/JS
 The web application uses a simple design and implements collaborative filtering for recommendation. The complete functionality is yet to be completed.
 Whats working: 
